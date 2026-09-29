@@ -1,0 +1,52 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Swap this step for actions/setup-node@v4 if you choose Node.js
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          # pip install pytest (ensure your testing framework is installed)
+
+      - name: Run unit tests
+        run: |
+          # Replace with your actual test command (e.g., npm test for Node)
+          echo "Running tests to ensure the AI endpoint doesn't crash..."
+          # pytest 
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    # Only deploy when code is pushed or merged directly into main
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Trigger Production Deployment
+        # Modern hackathon platforms (Render, Railway, Vercel) provide a Deploy Webhook URL.
+        # Store that URL in your GitHub Repository Secrets as DEPLOY_HOOK_URL.
+        env:
+          DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$DEPLOY_HOOK" ]; then
+            echo "Deployment webhook not found. Skipping deploy."
+            exit 0
+          fi
+          curl -X POST "$DEPLOY_HOOK"
