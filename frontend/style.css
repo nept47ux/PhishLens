@@ -1,0 +1,255 @@
+/* =========================
+   BASIC SETUP
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d1a;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.logo {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 44px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #9ca8c0;
+    font-size: 17px;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   INVESTIGATION CARDS
+========================= */
+
+.investigation-section {
+    margin-bottom: 35px;
+}
+
+.investigation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.investigation-card {
+    background: #11182b;
+    border: 1px solid #293451;
+    border-radius: 14px;
+    padding: 22px 15px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.investigation-card:hover {
+    border-color: #6675ff;
+    transform: translateY(-2px);
+}
+
+.investigation-card.active {
+    border: 2px solid #6675ff;
+    background: #182142;
+}
+
+.card-icon {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.card-description {
+    display: block;
+    font-size: 13px;
+    color: #8f9bb2;
+}
+
+
+/* =========================
+   INPUT SECTION
+========================= */
+
+.input-section {
+    background: #11182b;
+    border: 1px solid #293451;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    min-height: 170px;
+    padding: 18px;
+    border: 1px solid #34415f;
+    border-radius: 12px;
+    background: #080d1a;
+    color: white;
+    font-size: 16px;
+    resize: vertical;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #6675ff;
+}
+
+textarea::placeholder {
+    color: #657089;
+}
+
+
+/* =========================
+   ANALYZE BUTTON
+========================= */
+
+.analyze-button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #5865f2;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.analyze-button:hover {
+    background: #4752c4;
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.result {
+    background: #11182b;
+    border: 1px solid #293451;
+    border-radius: 16px;
+    padding: 25px;
+    min-height: 180px;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.status-badge {
+    background: #30394f;
+    color: #aeb8cc;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.result-placeholder {
+    color: #8f9bb2;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #667089;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .investigation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .investigation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        padding: 25px 12px;
+    }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishLens | AI Scam Investigator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <div class="logo">🛡️</div>
+            <h1>PhishLens</h1>
+            <p class="subtitle">
+                AI-Powered Scam & Legitimacy Investigator
+            </p>
+        </header>
+
+
+        <!-- Investigation Type -->
+        <section class="investigation-section">
+
+            <h2>What do you want to investigate?</h2>
+
+            <div class="investigation-grid">
+
+                <button class="investigation-card active" data-type="message">
+                    <span class="card-icon">💬</span>
+                    <span class="card-title">Message</span>
+                    <span class="card-description">
+                        SMS, WhatsApp, DMs
+                    </span>
+                </button>
+
+                <button class="investigation-card" data-type="email">
+                    <span class="card-icon">📧</span>
+                    <span class="card-title">Email</span>
+                    <span class="card-description">
+                        Email content & sender
+                    </span>
+                </button>
+
+                <button class="investigation-card" data-type="url">
+                    <span class="card-icon">🔗</span>
+                    <span class="card-title">Website / URL</span>
+                    <span class="card-description">
+                        Check a suspicious link
+                    </span>
+                </button>
+
+                <button class="investigation-card" data-type="phone">
+                    <span class="card-icon">📱</span>
+                    <span class="card-title">Phone</span>
+                    <span class="card-description">
+                        Reputation & reports
+                    </span>
+                </button>
+
+                <button class="investigation-card" data-type="person">
+                    <span class="card-icon">👤</span>
+                    <span class="card-title">Person</span>
+                    <span class="card-description">
+                        Verify a public identity claim
+                    </span>
+                </button>
+
+                <button class="investigation-card" data-type="company">
+                    <span class="card-icon">🏢</span>
+                    <span class="card-title">Company</span>
+                    <span class="card-description">
+                        Verify a business
+                    </span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Input -->
+        <section class="input-section">
+
+            <label id="inputLabel" for="investigationInput">
+                Paste the suspicious message
+            </label>
+
+            <textarea
+                id="investigationInput"
+                placeholder="Paste a suspicious message here..."
+            ></textarea>
+
+            <button id="analyzeButton" class="analyze-button">
+                🔍 Investigate
+            </button>
+
+        </section>
+
+
+        <!-- Results -->
+        <section id="result" class="result">
+
+            <div class="result-header">
+                <h2>Investigation Report</h2>
+                <span class="status-badge">WAITING</span>
+            </div>
+
+            <p class="result-placeholder">
+                Your investigation results will appear here.
+            </p>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                PhishLens provides evidence-based risk analysis.
+                It does not guarantee that an individual or organization is legitimate or fraudulent.
+            </p>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
